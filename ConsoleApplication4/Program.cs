@@ -19,11 +19,16 @@ namespace ConsoleApplication4
             string temp2 = Console.ReadLine();
             int razmer = Convert.ToInt32(temp2);
             double[] random = new double[razmer];
-            
+            Qsort(random, 0, random.Length-1);
+
+            for (int i = 0; i < random.Length; i++)
+            {
+                Console.WriteLine(random[i]);
+            }
          }
 
 
-        static void Qsort(double[] random , ref int a, ref int b)
+        static void Qsort(double[] random ,  int a,  int b)
         {
             double mid ;
             int x = a ;
@@ -46,16 +51,14 @@ namespace ConsoleApplication4
                 }
 
             }
-
-            if (x < a)
+                if (x < a)
             {
-                Qsort( random, ref a, ref x);
+                Qsort( random,  a,  x);
             }
             if (y < b)
             {
-                Qsort(random,ref b, ref y);
+                Qsort(random, b,  y);
             }
         }
-
     }
 }
