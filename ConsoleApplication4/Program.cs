@@ -12,10 +12,10 @@ namespace ConsoleApplication4
         {
             Console.WriteLine("Введите числa");
             string temp = Console.ReadLine();
-            int a = Convert.ToInt32(temp);
+            int first = Convert.ToInt32(temp);
             Console.WriteLine("Введите числo");
             string temp1 = Console.ReadLine();
-            int b = Convert.ToInt32(temp1);
+            int next = Convert.ToInt32(temp1);
             string temp2 = Console.ReadLine();
             int razmer = Convert.ToInt32(temp2);
             double[] random = new double[razmer];
@@ -28,36 +28,42 @@ namespace ConsoleApplication4
          }
 
 
-        static void Qsort(double[] random ,  int a,  int b)
+        static void Qsort(double[] random ,  int first,  int next)
         {
             double mid ;
-            int x = a ;
-            int y = b ;
-        
+            int x = first;
+            int y = next;
 
 
-            if (a > b || b > a)
+
+            if (first > next || next > first)
             {
                 mid = random[(x + y) / 2];
-                if (random[a] < mid && random[b] >= mid)
+                if (random[first] < mid )
                 {
                     x++;
+                }
+                else if (random[first] > mid )
+                {
+                    x--;                
+                }
+                else if (random[next] > mid)
+                {
                     y--;
                 }
-                else if (random[a] >= mid && random[b] < mid)
+                else //( random[next] < mid)
                 {
                     y++;
-                    x--;
                 }
 
             }
-                if (x < a)
+                if (x < first)
             {
-                Qsort( random,  a,  x);
+                Qsort( random,  first,  x);
             }
-            if (y < b)
+            if (y < next)
             {
-                Qsort(random, b,  y);
+                Qsort(random, next,  y);
             }
         }
     }
