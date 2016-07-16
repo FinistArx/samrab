@@ -10,60 +10,56 @@ namespace ConsoleApplication4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите числa");
-            string temp = Console.ReadLine();
-            int first = Convert.ToInt32(temp);
-            Console.WriteLine("Введите числo");
-            string temp1 = Console.ReadLine();
-            int next = Convert.ToInt32(temp1);
-            string temp2 = Console.ReadLine();
-            int razmer = Convert.ToInt32(temp2);
-            double[] random = new double[razmer];
-            Qsort(random, 0, random.Length-1);
 
+            int first = 0;
+            int next = 21;
+            int[] random = { 19, 21, 1, 5, 5, 5, 6, 9, 13, 8 };
+
+            Qsort(random, 0, random.Length - 1);
             for (int i = 0; i < random.Length; i++)
             {
                 Console.WriteLine(random[i]);
             }
-         }
+        }
 
-
-        static void Qsort(double[] random ,  int first,  int next)
+        static void Qsort(int[] random, int first, int next)
         {
-            double mid ;
             int x = first;
             int y = next;
-
-
-
-            if (first > next || next > first)
+            int mid;
+            if (next > first)
             {
-                mid = random[(x + y) / 2];
-                if (random[first] < mid )
+                mid = random[(first + next) / 2];
+                if (x <= y)
                 {
-                    x++;
-                }
-                else if (random[first] > mid )
-                {
-                    x--;                
-                }
-                else if (random[next] > mid)
-                {
-                    y--;
-                }
-                else //( random[next] < mid)
-                {
-                    y++;
-                }
+                    while (x < next && (random[x] < mid))
+                    {
+                        x++;
+                    }
+                    while ((y > first) && (random[y] > mid))
+                    {
+                        --y;
+                    }
+                    if (x <= y)
+                    {
+                        int temp;
+                        temp = random[x];
+                        random[x] = random[y];
+                        random[y] = temp;
 
-            }
-                if (x < first)
-            {
-                Qsort( random,  first,  x);
-            }
-            if (y < next)
-            {
-                Qsort(random, next,  y);
+                        ++x;
+                        --y;
+                    }
+
+                    if (first < y)
+                    {
+                        Qsort(random, first, y);
+                    }
+                    if (x < next)
+                    {
+                        Qsort(random, x, next);
+                    }
+                }
             }
         }
     }
