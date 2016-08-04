@@ -47,17 +47,6 @@ namespace SmartHouse
             }
         }
 
-        
-        public void On()
-        {
-            stateonoff = true;
-        }
-
-        public void Off()
-        {
-            stateonoff = false;
-        }
-
         public void DecreaseTemp()
         {
             for (; Temp > 10; Temp--)
@@ -78,17 +67,6 @@ namespace SmartHouse
                     Console.WriteLine("Посмотрите инструкцию");
                 }
             }
-        }
-
-
-        public void Open()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Close()
-        {
-            throw new NotImplementedException();
         }
     }
 }

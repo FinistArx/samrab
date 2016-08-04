@@ -8,6 +8,11 @@ namespace SmartHouse
     public abstract class AbstactDevice
     {
         public bool state;
+
+         public AbstactDevice(bool state)
+         {
+             this.state = state;
+         }
         public void On()
         {
             state = true;
@@ -17,5 +22,7 @@ namespace SmartHouse
         {
             state = false;
         }
+        
+        
     }
 }

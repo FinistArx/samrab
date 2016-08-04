@@ -25,16 +25,6 @@ namespace SmartHouse
             }
         }
 
-        public void On()
-        {
-            stateonoff = true;
-        }
-
-        public void Off()
-        {
-            stateonoff = false;
-        }
-
         public void DecreaseTemp()
         {
             for (; Temp > 10; Temp--) 
@@ -56,6 +46,44 @@ namespace SmartHouse
             }
             }
         }
+  
+            
+
+         int Temp
+        {
+            get { return temp; }
+            set
+            {
+                int temp = Int32.Parse(Console.ReadLine());
+                if (temp >= 10 && temp <= 90)
+                {                                   
+                    temp = value;
+                }
+                else
+                {
+                    Console.WriteLine("Посмотрите инструкцию");
+                }
+            }
+        }
+        string stateopenclose ;
+        public string Stateopenclose;
+        {
+            get
+            {
+                return stateopenclose;
+            }
+            set
+            {
+                if (this.stateopenclose)
+                   {
+                    stateopenclose = "открыто";
+                    }
+            else
+                    {
+                    stateopenclose = "закрыто"
+                    }
+                    stateopenclose = value;
+                    }
 
     }
-    }
+    

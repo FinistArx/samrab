@@ -25,19 +25,6 @@ namespace SmartHouse
          }
               }
          }
-
-
-
-        
-        public  void On()
-        {
-            stateonoff = true;
-        }
-
-        public void Off()
-        {
-            stateonoff = false;
-        }
        
         public void DecreaseTemp()
         {
