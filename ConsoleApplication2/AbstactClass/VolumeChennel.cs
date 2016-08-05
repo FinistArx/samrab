@@ -7,16 +7,16 @@ namespace SmartHouse
 {
     public abstract class VolumeChennel : AbstactDevice, IChangeChennel, IVolume
     {
-        public int currentchennel;
-        public int CurrentChennel
+        public int chennel;
+        public int Chennel
         {
             get
             {
-                return currentchennel;
+                return chennel;
             }
             set
             {
-                currentchennel = value;
+                chennel = value;
             }
         }
 
@@ -32,18 +32,7 @@ namespace SmartHouse
                 volume = value;
             }
         }
-        public int chennel;
-        public int Chennel
-        {
-            get
-            {
-                return chennel;
-            }
-            set
-            {
-                chennel = value;
-            }
-        }
+
 
 
         public void NextChennel()

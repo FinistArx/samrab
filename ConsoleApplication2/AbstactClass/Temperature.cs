@@ -7,43 +7,54 @@ namespace SmartHouse
 {
     public abstract class Temperature : AbstactDevice, SmartHouse.IRegulatorTemp
     {
-        public int temp;
+
         public int Temp
         {
-            get { return temp; }
-            set
+            get
             {
-                if (temp >= 10 && temp <= 90)
-                {
-                    temp = value;
-                }
-                else
-                {
-                    Console.WriteLine("Посмотрите инструкцию");
-                }
+                throw new System.NotImplementedException();
             }
+            set
+            { }
+        }       
+
+        public void IncreaseTemp()
+        {
+            throw new NotImplementedException();
         }
 
         public void DecreaseTemp()
         {
-            for (; temp > 10; temp--)
-            {
-                if (temp < 10)
-                {
-                    Console.WriteLine("Посмотрите инструкцию");
-                }
-            }
+            throw new NotImplementedException();
         }
 
-        public void IncreaseTemp()
+        public override string ToString()
         {
-            for (; temp < 40; temp++)
+            int temp;
+            if (this.state)
             {
-                if (temp > 40)
-                {
-                    Console.WriteLine("Посмотрите инструкцию");
-                }
+                state = "включен";
             }
+            else
+            {
+                state = "выключен";
+            }
+
+            string mode;
+            if (this.brightness == BrightnessLevel.Low)
+            {
+                mode = "слабая";
+            }
+            else if (this.brightness == BrightnessLevel.Medium)
+            {
+                mode = "средняя";
+            }
+            else
+            {
+                mode = "высокая";
+            }
+
+            return "состояние: " + state + ", яркость: " + mode;
         }
 
     }

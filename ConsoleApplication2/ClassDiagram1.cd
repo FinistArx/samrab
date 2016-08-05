@@ -31,7 +31,7 @@
   <Class Name="SmartHouse.FridgeFrizer">
     <Position X="11.75" Y="17" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAMAAAAQAIAAAAAACAAAAAABAAACAAAAAgACAAIA=</HashCode>
+      <HashCode>AAAAAEAAAAQAIAAAAAAAAAAAAABAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Class\FridgeFrizer.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -39,21 +39,21 @@
   <Class Name="SmartHouse.Conditioner">
     <Position X="16.75" Y="17.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAMAAAAAAAAAAAAAAAAAAAABAAACAAAAAgAAAAIA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Class\Conditioner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHouse.Boiler">
     <Position X="20.25" Y="17.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAMAAAAAAAAAAAAAAAAAAAABAAACAAAAAgAAAAIA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Class\Boiler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHouse.Temperature">
     <Position X="16" Y="12.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAgAAAAAAAAACAAAAAABAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>AbstactClass\Temperature.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -68,10 +68,10 @@
   <Class Name="SmartHouse.VolumeChennel">
     <Position X="4.25" Y="12.25" Width="1.5" />
     <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAIAIAAQAIAAABAAAAAAAAAAAAoAEAACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAIAAAAQAIAAABAAAAAAAAAAAAoAEAACAAA=</HashCode>
       <FileName>AbstactClass\VolumeChennel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

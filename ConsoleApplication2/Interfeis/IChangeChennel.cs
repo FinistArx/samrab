@@ -7,7 +7,7 @@ namespace SmartHouse
 {
     public interface IChangeChennel
     {
-        int CurrentChennel
+        int Chennel
         {
             get;
             set;

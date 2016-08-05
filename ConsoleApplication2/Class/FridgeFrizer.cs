@@ -7,33 +7,7 @@ namespace SmartHouse
 {
     public class FridgeFrizer : SmartHouse.Temperature, IOpenClose
     {
-        public bool StateOnOff
-        {
-            get
-            {
-                return stateonoff;
-            }
-            set
-            {
-                stateonoff = value;
-            }
-        }
-        public int temp;
-        public int Temp
-        {
-            get { return temp; }
-            set
-            {
-                if (value >= 10 && value <= 90)
-                {
-                    temp = value;
-                }
-                else
-                {
-                    Console.WriteLine("Посмотрите инструкцию");
-                }
-            }
-        }
+
         public bool stateopenclose;
         public bool StateOpenClose
         {
@@ -47,7 +21,8 @@ namespace SmartHouse
             }
         }
 
-        public void DecreaseTemp()
+
+        public  void DecreaseTemp()
         {
             for (; Temp > 10; Temp--)
             {
@@ -58,7 +33,7 @@ namespace SmartHouse
             }
         }
 
-        public void IncreaseTemp()
+        public  void IncreaseTemp()
         {
             for (; Temp < 40; Temp++)
             {
@@ -67,6 +42,17 @@ namespace SmartHouse
                     Console.WriteLine("Посмотрите инструкцию");
                 }
             }
+        }
+
+
+        public void Open()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Close()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -13,8 +13,8 @@ namespace SmartHouse
         {
             Console.WriteLine("Температурный режим работы котла 10-90");
             Console.WriteLine("Температура режим работы кондиционера 10-40");
-            Console.WriteLine("Температура режим работы холодильника от +5 до -10");
-            Console.WriteLine("Температура режим работы морзилки от 0 до (-18)");
+            Console.WriteLine("Температура режим работы холодильника от +5 до -15");
+            Console.WriteLine("Температура режим работы морзилки от 0 до (-20)");
         }
       
         public static void Help()
@@ -23,10 +23,9 @@ namespace SmartHouse
             Console.WriteLine("add_NewEquipment");
             Console.WriteLine("del_Equipment");
             Console.WriteLine("On_Equipment");
-            Console.WriteLine("Off_Equipment");
-            Console.WriteLine("SetTemp");
-            Console.WriteLine("IncreaseTemp");
-            Console.WriteLine("DecreaseTemp");
+            Console.WriteLine("Off Equipment");
+            Console.WriteLine("IncreaseTemp Conditioner");
+            Console.WriteLine("DecreaseTemp Conditioner");
             Console.WriteLine("IncreaseVolume");
             Console.WriteLine("DecreaseVolume");
             Console.WriteLine("SetVolume");

@@ -87,43 +87,25 @@ namespace SmartHouse
                         break;
                         
                     case "DecreaseTemp":
-                        if (NewEquipment[commands[0]] is IRegulatorTemp )
-                        {
-                            switch (commands[0].ToLower())
-                            {
-                                case "Conditioner":
-                                    ((IRegulatorTemp)Conditioner.[commands[0]]).DecreaseTemp();                            
-                                    break;
-                                
-                                case "Boiler":
-                                   ((IRegulatorTemp)Boiler.[commands[0]]).DecreaseTemp();                           
-                                    break;
-                        
-                            case "FridgeFrizer":
-                            ((IRegulatorTemp)FridgeFrizer.[commands[0]]).DecreaseTemp();
-                                    break;
-                            }
-                        }
-                         case "IncreaseTemp":
                         if (NewEquipment[commands[0]] is IRegulatorTemp)
                         {
                             switch (commands[0].ToLower())
                             {
                                 case "Conditioner":
-                                   Conditioner.[commands[0]].IncreaseTemp();                      
-                                    break;
-                                
-                                case "Boiler":
-                                  Boiler. [commands[0]].IncreaseTemp();                            
-                                    break;
-
-                            case "FridgeFrizer":
-                                   FridgeFrizer.[commands[0]].IncreaseTemp();
-                            
-                                    break;
+                                   Conditioner.DecreaseTemp();
                             }
+                                    break;
+                                                        switch (commands[0].ToLower())
+                            {
+                                case "Boiler":
+                                    Conditioner.DecreaseTemp();
+                            }
+                                    break;
                         }
-                                       
+
+                        
+                
+
                     case "IncreaseVolume":
                         if (NewEquipment[commands[0]] is IVolume)
                         {
@@ -157,9 +139,11 @@ namespace SmartHouse
                         Menu.Help();
                         break;
                 }
+
             }
+
+
+
         }
     }
 }
-
-         
