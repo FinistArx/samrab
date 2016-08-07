@@ -22,19 +22,19 @@ namespace SmartHouse
         public FridgeFrizer CreateFridgeFrizer()
         {
 
-            FridgeFrizer FrFr = new FridgeFrizer();
+            FridgeFrizer FrFr = new FridgeFrizer( );
             return FrFr;      
         }
 
          public Boiler CreateBoiler()
         {
-            Boiler Boil= new Boiler();
+            Boiler Boil= new Boiler( );
             return Boil;
          }
 
            public Conditioner CreateConditioner() 
            {
-               Conditioner Cond = new Conditioner();
+               Conditioner Cond = new Conditioner( );
                return Cond;
         }
     }

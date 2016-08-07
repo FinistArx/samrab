@@ -5,20 +5,33 @@ using System.Text;
 
 namespace SmartHouse
 {
-    public class Boiler : SmartHouse.Temperature
+    public class Boiler : Temperature
     {
 
-        public  void DecreaseTemp()
+        public Boiler (int min, int max, int temp)
+            : base(min, max, temp)
         {
-            for (; Temp > 10; Temp--) { }
-           
+            this.temp = temp;
+            this.min = min;
+            this.max = max;
         }
 
-        public  void IncreaseTemp()
+        public override string ToString()
         {
-            for (; Temp < 90; Temp++) { }
+            string state;
+            
+            if (this.state)
+            {
+                state = "включен";
+            }
+            else
+            {
+                state = "выключен";
+            }
+
+   
+            
+            return "состояние: " + state + ", температура: " + Temp;
         }
-
-
     }
 }

@@ -5,30 +5,30 @@ using System.Text;
 
 namespace SmartHouse
 {
-    public class Conditioner : SmartHouse.Temperature
+    public class Conditioner : Temperature
     {
-       
 
-        public  void DecreaseTemp()
+        public Conditioner(int min, int max, int temp)
+            : base(min, max, temp)
         {
-            for (; Temp > 10; Temp--) 
-            {
-                if (Temp < 10)
-                {
-                    Console.WriteLine("Посмотрите инструкцию");
-                }
-            }
+            this.temp = temp;
+            this.min = min;
+            this.max = max;
         }
-
-        public  void IncreaseTemp()
+        public override string ToString()
         {
-            for (; Temp < 40; Temp++)
+            string state;
+            if (this.state)
             {
-            if (Temp > 40)
+                state = "включен";
+            }
+            else
             {
-                Console.WriteLine("Посмотрите инструкцию");
+                state = "выключен";
             }
-            }
+
+
+            return "состояние: " + state + ", температура: " + Temp;
         }
        
     }

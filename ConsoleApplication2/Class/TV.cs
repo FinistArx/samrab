@@ -5,21 +5,83 @@ using System.Text;
 
 namespace SmartHouse
 {
-    public abstract class AbstractDevice
+    public class TV : AbstractDevice, IChangeChennel, IVolume
     {
-        public bool State
+        public int chennel;
+        public int Chennel
         {
-            get;
-            set;
+            get
+            {
+                return chennel;
+            }
+            set
+            {
+                chennel = value;
+            }
+
         }
-       
-         public void On() { }
-         public void Off() { }
-    }
 
-    public class TV : SmartHouse.VolumeChennel
-    {
+        public int volume;
+        public int Volume
+        {
+            get
+            {
+                return volume;
+            }
+            set
+            {
+                volume = value;
+            }
+        }
 
-    
+
+
+        public void NextChennel()
+        {
+
+            if (chennel < 200)
+            {
+                chennel++;
+            }
+        }
+
+        public void PreviusChennel()
+        {
+            if (chennel > 0)
+            {
+                chennel--;
+            }
+        }
+
+        public void DecreaseVolume()
+        {
+            if (volume > 0)
+            {
+                volume--;
+            }
+        }
+
+        public void IncreaseVolume()
+        {
+            for (; volume < 100; volume++)
+            {
+                volume++;
+            }
+        }
+        public override string ToString()
+        {
+            string state;
+            if (this.state)
+            {
+                state = "включен";
+            }
+            else
+            {
+                state = "выключен";
+            }
+
+
+            return "состояние: " + state + ", текущая громкость: " + Volume + "текущий канал " + Chennel;
+        }
     }
 }

@@ -11,9 +11,10 @@ namespace SmartHouse
         static void Main(string[] args)
         {
 
-            IDictionary<string, AbstactDevice> NewEquipment = new Dictionary<string, AbstactDevice>();
+            IDictionary<string, AbstractDevice> NewEquipment = new Dictionary<string, AbstractDevice>();
             Creator creativ = new Creator();
-            NewEquipment.Add("Пипетка", creativ.CreateTV());
+
+            NewEquipment.Add("Рулетка", creativ.CreateBoiler());
 
             while (true)
             {
@@ -32,15 +33,15 @@ namespace SmartHouse
                     return;
                 }
 
-                if (commands.Length != 3)
+                if (commands.Length != 2)
                 {
                     Menu.Help();
                     continue;
                 }
 
-                if (commands[0].ToLower() == "add" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0].ToLower() == "add" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    NewEquipment.Add(commands[2], creativ.CreateTV());
+                    NewEquipment.Add(commands[1], creativ.CreateTV());
                     continue;
                 }
 
@@ -87,24 +88,18 @@ namespace SmartHouse
                         break;
                         
                     case "DecreaseTemp":
-                        if (NewEquipment[commands[0]] is IRegulatorTemp)
+                        if (NewEquipment[commands[1]] is IRegulatorTemp)
                         {
-                            switch (commands[0].ToLower())
-                            {
-                                case "Conditioner":
-                                   Conditioner.DecreaseTemp();
-                            }
-                                    break;
-                                                        switch (commands[0].ToLower())
-                            {
-                                case "Boiler":
-                                    Conditioner.DecreaseTemp();
-                            }
-                                    break;
+                            ((IRegulatorTemp)NewEquipment[commands[1]]).DecreaseTemp();
                         }
+                        break;
 
-                        
-                
+                    case "IncreaseTemp":
+                        if (NewEquipment[commands[1]] is IRegulatorTemp)
+                        {
+                            ((IRegulatorTemp)NewEquipment[commands[1]]).IncreaseTemp();
+                        }
+                        break;             
 
                     case "IncreaseVolume":
                         if (NewEquipment[commands[0]] is IVolume)
@@ -119,12 +114,14 @@ namespace SmartHouse
                             ((IVolume)NewEquipment[commands[0]]).DecreaseVolume();
                         }
                         break;
+
                     case "PreviusChennel":
                         if (NewEquipment[commands[0]] is IChangeChennel)
                         {
                             ((IChangeChennel)NewEquipment[commands[0]]).PreviusChennel();
                         }
                         break;
+
                     case "NextChennel":
                         if (NewEquipment[commands[0]] is IChangeChennel)
                         {
@@ -135,6 +132,7 @@ namespace SmartHouse
                     case "Instruction":
                         Menu.Instruction();
                         break;
+
                     default:
                         Menu.Help();
                         break;

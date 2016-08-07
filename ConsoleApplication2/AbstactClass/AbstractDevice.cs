@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SmartHouse
 {
-    public abstract class AbstactDevice
+    public abstract class AbstractDevice
     {
         public bool state;
         public void On()
@@ -17,5 +17,6 @@ namespace SmartHouse
         {
             state = false;
         }
+
     }
 }

@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstactClass\AbstactDevice.cs" />
+    <Compile Include="AbstactClass\AbstractDevice.cs" />
+    <Compile Include="Class\TV.cs" />
     <Compile Include="Class\Boiler.cs" />
     <Compile Include="Enum\BoilerState.cs" />
     <Compile Include="AbstactClass\Temperature.cs" />
-    <Compile Include="Class\TV.cs" />
     <Compile Include="Class\MusikCentr.cs" />
     <Compile Include="Enum\ColdState.cs" />
     <Compile Include="Class\Conditioner.cs" />
@@ -59,7 +59,6 @@
     <Compile Include="Interfeis\IVolume.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Enum\MusikCentrState.cs" />
-    <Compile Include="AbstactClass\VolumeChennel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enum\State.cs" />

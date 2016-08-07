@@ -5,57 +5,79 @@ using System.Text;
 
 namespace SmartHouse
 {
-    public abstract class Temperature : AbstactDevice, SmartHouse.IRegulatorTemp
+    public abstract class Temperature : AbstractDevice, SmartHouse.IRegulatorTemp
     {
+        public  int max;
+        public  int min;
+        public int temp;
+        
+        public Temperature (int min, int max, int temp)
+        {
+            this.temp = temp;
+            this.min = min;
+            this.max = max;
+        }
 
         public int Temp
         {
             get
             {
-                throw new System.NotImplementedException();
+                return temp;
             }
             set
-            { }
-        }       
+            {
+                if (value <= max && value >= min)
+                {
+                    temp = value;
+                }
+            }
+        }
+ 
+        public  int Max
+        {
+            get
+            {
+                return max;
+            }
+
+        }
+
+        public  int Min
+        {
+            get
+            {
+                return min;
+            }
+
+        }
+
 
         public void IncreaseTemp()
         {
-            throw new NotImplementedException();
+            for (; Temp > Min ; Temp--) 
+            { }
+
         }
 
-        public void DecreaseTemp()
+        public  void DecreaseTemp()
         {
-            throw new NotImplementedException();
+            for (; Temp < Max ; Temp++) { }
         }
 
-        public override string ToString()
+
+
+        public void Increase()
         {
-            int temp;
-            if (this.state)
-            {
-                state = "включен";
-            }
-            else
-            {
-                state = "выключен";
-            }
-
-            string mode;
-            if (this.brightness == BrightnessLevel.Low)
-            {
-                mode = "слабая";
-            }
-            else if (this.brightness == BrightnessLevel.Medium)
-            {
-                mode = "средняя";
-            }
-            else
-            {
-                mode = "высокая";
-            }
-
-            return "состояние: " + state + ", яркость: " + mode;
+            Temp++;
         }
+
+        public void Decrease()
+        {
+            Temp--;
+        }
+
+
 
     }
 }
+    

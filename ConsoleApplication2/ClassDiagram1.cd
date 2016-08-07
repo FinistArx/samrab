@@ -14,24 +14,18 @@
       <FileName>Creator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartHouse.TV" Collapsed="true">
-    <Position X="6" Y="17.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAIAAAAIAIAAAAIAAADAIAAAAAAAEAAgAAAACAIg=</HashCode>
-      <FileName>Class\TV.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SmartHouse.MusikCentr">
-    <Position X="2.25" Y="17.5" Width="1.5" />
+    <Position X="5.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAIAIAAEAIAAABAAAAAAAAAAAAoAAAACAAA=</HashCode>
       <FileName>Class\MusikCentr.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmartHouse.FridgeFrizer">
     <Position X="11.75" Y="17" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAQAIAAAAAAAAAAAAABAAAAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAEAAAABACAAAA=</HashCode>
       <FileName>Class\FridgeFrizer.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -39,47 +33,44 @@
   <Class Name="SmartHouse.Conditioner">
     <Position X="16.75" Y="17.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Class\Conditioner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHouse.Boiler">
     <Position X="20.25" Y="17.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Class\Boiler.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHouse.AbstractDevice">
+    <Position X="12.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIA=</HashCode>
+      <FileName>AbstactClass\AbstractDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHouse.TV">
+    <Position X="8.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAIAIAAEAIAAABAAAAAAAAAAAAoAAAACAAA=</HashCode>
+      <FileName>Class\TV.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmartHouse.Temperature">
     <Position X="16" Y="12.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAEEAAABARAAAAEAAAAAAAAABAAACAAAAAgAAAAAA=</HashCode>
       <FileName>AbstactClass\Temperature.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="SmartHouse.AbstactDevice">
-    <Position X="12.5" Y="9.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIA=</HashCode>
-      <FileName>AbstactClass\AbstactDevice.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SmartHouse.VolumeChennel">
-    <Position X="4.25" Y="12.25" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIAAAAQAIAAABAAAAAAAAAAAAoAEAACAAA=</HashCode>
-      <FileName>AbstactClass\VolumeChennel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="SmartHouse.IChangeChennel">
     <Position X="9.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAgAEAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Interfeis\IChangeChennel.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -93,7 +84,7 @@
   <Interface Name="SmartHouse.IOpenClose">
     <Position X="14.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABACAAAA=</HashCode>
       <FileName>Interfeis\IOpenClose.cs</FileName>
     </TypeIdentifier>
   </Interface>

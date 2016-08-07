@@ -7,52 +7,52 @@ namespace SmartHouse
 {
     public class FridgeFrizer : SmartHouse.Temperature, IOpenClose
     {
-
-        public bool stateopenclose;
-        public bool StateOpenClose
+            
+  
+          public FridgeFrizer (int min, int max, int temp) : base( min,  max,  temp)
+        {
+            this.temp = temp;
+            this.min = min;
+            this.max = max;
+        }
+            
+        public bool state;
+        public bool State
         {
             get
             {
-                return stateopenclose;
+                return state;
             }
             set
             {
-                stateopenclose = value;
+                state = value;
             }
         }
-
-
-        public  void DecreaseTemp()
-        {
-            for (; Temp > 10; Temp--)
-            {
-                if (Temp < 10)
-                {
-                    Console.WriteLine("Посмотрите инструкцию");
-                }
-            }
-        }
-
-        public  void IncreaseTemp()
-        {
-            for (; Temp < 40; Temp++)
-            {
-                if (Temp > 40)
-                {
-                    Console.WriteLine("Посмотрите инструкцию");
-                }
-            }
-        }
-
 
         public void Open()
         {
-            throw new NotImplementedException();
+            state = true;
         }
 
         public void Close()
         {
-            throw new NotImplementedException();
+            state = false;
         }
+        public override string ToString()
+        {
+            string state;
+            if (this.state)
+            {
+                state = "включен";
+            }
+            else
+            {
+                state = "выключен";
+            }
+
+
+            return "состояние: " + state + ", температура: " + Temp;
+        }
+
     }
 }
