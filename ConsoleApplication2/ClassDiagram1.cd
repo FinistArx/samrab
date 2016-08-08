@@ -95,35 +95,28 @@
       <FileName>Interfeis\IVolume.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="ConsoleApplication2.Equipment">
+  <Enum Name="SmartHouse.Equipment">
     <Position X="10.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAAQAAABAAAAAAAACAAAAEAABAAAAAAA=</HashCode>
       <FileName>Enum\Equipment.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ConsoleApplication2.TVState">
+  <Enum Name="SmartHouse.TVState">
     <Position X="12.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAIA=</HashCode>
       <FileName>Enum\TVState.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ConsoleApplication2.MusikCentrState">
+  <Enum Name="SmartHouse.MusikCentrState">
     <Position X="14.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAIA=</HashCode>
       <FileName>Enum\MusikCentrState.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ConsoleApplication2.ColdState">
-    <Position X="16.75" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
-      <FileName>Enum\ColdState.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="ConsoleApplication2.HeatingState">
+  <Enum Name="SmartHouse.HeatingState">
     <Position X="18.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>

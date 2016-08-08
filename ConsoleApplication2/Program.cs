@@ -10,14 +10,18 @@ namespace SmartHouse
     {
         static void Main(string[] args)
         {
-
-            IDictionary<string, AbstractDevice> NewEquipment = new Dictionary<string, AbstractDevice>();
+            
+            IDictionary<string , AbstractDevice> NewEquipment = new Dictionary<string, AbstractDevice>();
             Creator creativ = new Creator();
-
-            NewEquipment.Add("Рулетка", creativ.CreateBoiler());
+            NewEquipment.Add("Ra", creativ.CreateTV());
+            NewEquipment.Add("Pi", creativ.CreateBoiler());
+            NewEquipment.Add("i", creativ.CreateConditioner());
+            NewEquipment.Add("P", creativ.CreateFridgeFrizer());
+            NewEquipment.Add("a", creativ.CreateMusikCentr());
 
             while (true)
             {
+                
                 Console.Clear();
                 foreach (var newtemp in NewEquipment)
                 {
@@ -33,19 +37,19 @@ namespace SmartHouse
                     return;
                 }
 
-                if (commands.Length != 2)
+                if (commands.Length != 3)
                 {
                     Menu.Help();
                     continue;
                 }
 
-                if (commands[0].ToLower() == "add" && NewEquipment.ContainsKey(commands[1]))
+                if (commands[0].ToLower() == "add" &&  !NewEquipment.ContainsKey(commands[1]))
                 {
-                    NewEquipment.Add(commands[1], creativ.CreateTV());
+                    NewEquipment.Add(commands[1], new NewEquipment(commands[1], creativ));
                     continue;
                 }
 
-                if (commands[0].ToLower() == "add" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0].ToLower() == "add" && NewEquipment.ContainsKey(commands[1]))
                 {
                     Console.WriteLine("Устройство с таким именем уже существует");
                     Console.WriteLine("Нажмите любую клавишу для продолжения");
@@ -64,52 +68,56 @@ namespace SmartHouse
                     case "del":
                         NewEquipment.Remove(commands[1]);
                         break;
+                    case "add":
+                        NewEquipment.Remove(commands[1]);
+                        break;
 
                     case "on":
                         NewEquipment[commands[1]].On();
                         break;
 
+
                     case "off":
                         NewEquipment[commands[1]].Off();
                         break;
 
-                    case "close":
-                        if (NewEquipment[commands[1]] is IOpenClose)
+                    case "cl":
+                        if (NewEquipment[commands[0]] is IOpenClose)
                         {
-                            ((IOpenClose)NewEquipment[commands[0]]).Close();
+                            ((IOpenClose)NewEquipment[commands[1]]).Close();
                         }
                         break;
 
-                    case "open":
-                        if (NewEquipment[commands[1]] is IOpenClose)
+                    case "op":
+                        if (NewEquipment[commands[0]] is IOpenClose)
                         {
                             ((IOpenClose)NewEquipment[commands[0]]).Open();
                         }
                         break;
                         
-                    case "DecreaseTemp":
+                    case "decrT":
                         if (NewEquipment[commands[1]] is IRegulatorTemp)
                         {
                             ((IRegulatorTemp)NewEquipment[commands[1]]).DecreaseTemp();
                         }
                         break;
 
-                    case "IncreaseTemp":
+                    case "incrT":
                         if (NewEquipment[commands[1]] is IRegulatorTemp)
                         {
                             ((IRegulatorTemp)NewEquipment[commands[1]]).IncreaseTemp();
                         }
                         break;             
 
-                    case "IncreaseVolume":
-                        if (NewEquipment[commands[0]] is IVolume)
+                    case "incV":
+                        if (NewEquipment[commands[1]] is IVolume)
                         {
                             ((IVolume)NewEquipment[commands[0]]).IncreaseVolume();
                         }
                         break;
 
-                    case "DecreaseVolume":
-                        if (NewEquipment[commands[0]] is IVolume)
+                    case "decrV":
+                        if (NewEquipment[commands[1]] is IVolume)
                         {
                             ((IVolume)NewEquipment[commands[0]]).DecreaseVolume();
                         }

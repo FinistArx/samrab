@@ -7,7 +7,6 @@ namespace SmartHouse
 {
     public class Boiler : Temperature
     {
-
         public Boiler (int min, int max, int temp)
             : base(min, max, temp)
         {
@@ -27,10 +26,7 @@ namespace SmartHouse
             else
             {
                 state = "выключен";
-            }
-
-   
-            
+            }        
             return "состояние: " + state + ", температура: " + Temp;
         }
     }

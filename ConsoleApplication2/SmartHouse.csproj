@@ -47,7 +47,6 @@
     <Compile Include="Enum\BoilerState.cs" />
     <Compile Include="AbstactClass\Temperature.cs" />
     <Compile Include="Class\MusikCentr.cs" />
-    <Compile Include="Enum\ColdState.cs" />
     <Compile Include="Class\Conditioner.cs" />
     <Compile Include="Enum\Equipment.cs" />
     <Compile Include="Creator.cs" />

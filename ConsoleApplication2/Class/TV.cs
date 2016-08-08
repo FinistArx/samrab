@@ -6,7 +6,15 @@ using System.Text;
 namespace SmartHouse
 {
     public class TV : AbstractDevice, IChangeChennel, IVolume
-    {
+    {               
+        public TV( int chennel, int volume)
+        {
+
+            this.volume = volume;
+            this.chennel = chennel;
+
+        }
+
         public int chennel;
         public int Chennel
         {
@@ -81,7 +89,7 @@ namespace SmartHouse
             }
 
 
-            return "состояние: " + state + ", текущая громкость: " + Volume + "текущий канал " + Chennel;
+            return "состояние: " + state + " , текущая громкость: " + Volume + "текущий канал " + Chennel;
         }
     }
 }

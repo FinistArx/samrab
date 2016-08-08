@@ -7,9 +7,9 @@ namespace SmartHouse
 {
     public abstract class Temperature : AbstractDevice, SmartHouse.IRegulatorTemp
     {
-        public  int max;
-        public  int min;
-        public int temp;
+        protected  int max;
+        protected  int min;
+        public int temp; 
         
         public Temperature (int min, int max, int temp)
         {

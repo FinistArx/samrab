@@ -15,28 +15,28 @@ namespace SmartHouse
             this.min = min;
             this.max = max;
         }
-            
-        public bool state;
-        public bool State
+
+          public bool stateopenclose;
+        public bool StateOpenClose
         {
             get
             {
-                return state;
+                return stateopenclose;
             }
             set
             {
-                state = value;
+                stateopenclose = value;
             }
         }
 
         public void Open()
         {
-            state = true;
+            stateopenclose = true;
         }
 
         public void Close()
         {
-            state = false;
+            stateopenclose = false;
         }
         public override string ToString()
         {
@@ -49,9 +49,18 @@ namespace SmartHouse
             {
                 state = "выключен";
             }
+            string stateopenclose;
+            if (this.stateopenclose)
+            {
+                stateopenclose = "открыта";
+            }
+            else
+            {
+                stateopenclose = "закрыта";
+            }
 
 
-            return "состояние: " + state + ", температура: " + Temp;
+            return "состояние: " + state + ", температура:  " + Temp + ", дверь " + stateopenclose;
         }
 
     }

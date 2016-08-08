@@ -7,6 +7,14 @@ namespace SmartHouse
 {
     public class MusikCentr : AbstractDevice, IChangeChennel, IVolume
     {
+        public MusikCentr( int chennel, int volume)
+        {
+
+            this.volume = volume;
+            this.chennel = chennel;
+
+        }
+
         public int chennel;
         public int Chennel
         {
@@ -32,7 +40,6 @@ namespace SmartHouse
                 volume = value;
             }
         }
-
 
 
         public void NextChennel()
@@ -67,6 +74,8 @@ namespace SmartHouse
                 volume++;
             }
         }
+
+
 
                 public override string ToString()
         {
