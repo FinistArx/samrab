@@ -26,7 +26,21 @@ namespace SmartHouse
             else
             {
                 state = "выключен";
-            }        
+            }    
+            string temp;
+            if (this.temp == Temp)
+            {
+                return Temp;
+            }
+            else if (temp == Temp.IncreaseTemp )
+            {
+                return  Temperature.IncreaseTemp;
+            }
+            else if (temp == Temp.DecreaseTemp)
+            {
+                return Temperature.DecreaseTemp;
+            }
+
             return "состояние: " + state + ", температура: " + Temp;
         }
     }
