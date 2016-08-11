@@ -7,11 +7,12 @@ namespace SmartHouse
 {
     public abstract class Temperature : AbstractDevice, SmartHouse.IRegulatorTemp
     {
+        public string name;
         protected  int max;
         protected  int min;
         public int temp; 
         
-        public Temperature (int min, int max, int temp)
+        public Temperature (string name, int min, int max, int temp)
         {
             this.temp = temp;
             this.min = min;
@@ -61,7 +62,7 @@ namespace SmartHouse
 
         public  void  IncreaseTemp()
         {
-            for (; Temp < Max ; Temp) { }
+            for (; Temp < Max ; Temp++) { }
         }
 
 

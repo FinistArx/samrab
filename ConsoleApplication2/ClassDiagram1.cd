@@ -10,7 +10,7 @@
   <Class Name="SmartHouse.Creator">
     <Position X="4.5" Y="0.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAQAQAAAABAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAgAAAQAAAAAABACAAAAAAAAABAAAAA=</HashCode>
       <FileName>Creator.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -19,14 +19,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAIAIAAEAIAAABAAAAAAAAAAAAoAAAACAAA=</HashCode>
       <FileName>Class\MusikCentr.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="SmartHouse.FridgeFrizer">
-    <Position X="11.75" Y="17" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAEAAAABACAAAA=</HashCode>
-      <FileName>Class\FridgeFrizer.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -62,8 +54,16 @@
   <Class Name="SmartHouse.Temperature">
     <Position X="16" Y="12.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEEAAABARAAAAEAAAAAAAAABAAACAAAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAEEAAABARAAAAEAAAAAAAAABEAACAAAAAgAAAAAA=</HashCode>
       <FileName>AbstactClass\Temperature.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouse.Fridge">
+    <Position X="11.75" Y="17" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAIAAEAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Class\Fridge.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -84,7 +84,7 @@
   <Interface Name="SmartHouse.IOpenClose">
     <Position X="14.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Interfeis\IOpenClose.cs</FileName>
     </TypeIdentifier>
   </Interface>

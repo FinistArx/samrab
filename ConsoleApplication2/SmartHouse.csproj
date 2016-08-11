@@ -50,7 +50,7 @@
     <Compile Include="Class\Conditioner.cs" />
     <Compile Include="Enum\Equipment.cs" />
     <Compile Include="Creator.cs" />
-    <Compile Include="Class\FridgeFrizer.cs" />
+    <Compile Include="Class\Fridge.cs" />
     <Compile Include="Enum\HeaterState.cs" />
     <Compile Include="Interfeis\IChangeChennel.cs" />
     <Compile Include="Interfeis\IOpenClose.cs" />

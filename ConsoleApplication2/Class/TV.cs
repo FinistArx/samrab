@@ -6,8 +6,8 @@ using System.Text;
 namespace SmartHouse
 {
     public class TV : AbstractDevice, IChangeChennel, IVolume
-    {               
-        public TV( int chennel, int volume)
+    {
+        public TV(string name, int chennel, int volume)
         {
 
             this.volume = volume;

@@ -8,8 +8,8 @@ namespace SmartHouse
     public class Conditioner : Temperature
     {
 
-        public Conditioner(int min, int max, int temp)
-            : base(min, max, temp)
+        public Conditioner(string name, int min, int max, int temp)
+            : base(name, min, max, temp)
         {
             this.temp = temp;
             this.min = min;

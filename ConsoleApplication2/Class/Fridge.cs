@@ -5,11 +5,12 @@ using System.Text;
 
 namespace SmartHouse
 {
-    public class FridgeFrizer : SmartHouse.Temperature, IOpenClose
+    public class Fridge : SmartHouse.Temperature, IOpenClose
     {
-            
-  
-          public FridgeFrizer (int min, int max, int temp) : base( min,  max,  temp)
+
+
+        public Fridge(string name, int min, int max, int temp)
+            : base(name, min, max, temp)
         {
             this.temp = temp;
             this.min = min;

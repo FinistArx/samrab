@@ -7,7 +7,7 @@ namespace SmartHouse
 {
     public class MusikCentr : AbstractDevice, IChangeChennel, IVolume
     {
-        public MusikCentr( int chennel, int volume)
+        public MusikCentr(string name, int chennel, int volume)
         {
 
             this.volume = volume;

@@ -7,8 +7,8 @@ namespace SmartHouse
 {
     public class Boiler : Temperature
     {
-        public Boiler (int min, int max, int temp)
-            : base(min, max, temp)
+        public Boiler(string name, int min, int max, int temp)
+            : base(name, min, max, temp)
         {
             this.temp = temp;
             this.min = min;
@@ -18,7 +18,7 @@ namespace SmartHouse
         public override string ToString()
         {
             string state;
-            
+
             if (this.state)
             {
                 state = "включен";
@@ -26,22 +26,10 @@ namespace SmartHouse
             else
             {
                 state = "выключен";
-            }    
-            string temp;
-            if (this.temp == Temp)
-            {
-                return Temp;
-            }
-            else if (temp == Temp.IncreaseTemp )
-            {
-                return  Temperature.IncreaseTemp;
-            }
-            else if (temp == Temp.DecreaseTemp)
-            {
-                return Temperature.DecreaseTemp;
             }
 
-            return "состояние: " + state + ", температура: " + Temp;
+
+                return "состояние: " + state + ", температура: " + Temp;
+            }
         }
     }
-}

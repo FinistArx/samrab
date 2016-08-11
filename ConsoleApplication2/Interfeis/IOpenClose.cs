@@ -8,10 +8,7 @@ namespace SmartHouse
     public interface IOpenClose
     {
         bool StateOpenClose
-        {
-            get;
-            set;
-        }
+        {            get;            set;        }
     
         void Open();
 

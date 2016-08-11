@@ -10,18 +10,17 @@ namespace SmartHouse
     {
         static void Main(string[] args)
         {
-            
-            IDictionary<string , AbstractDevice> NewEquipment = new Dictionary<string, AbstractDevice>();
+
+            IDictionary<string, AbstractDevice> NewEquipment = new Dictionary<string, AbstractDevice>();
             Creator creativ = new Creator();
-            NewEquipment.Add("Ra", creativ.CreateTV());
-            NewEquipment.Add("Pi", creativ.CreateBoiler());
-            NewEquipment.Add("i", creativ.CreateConditioner());
-            NewEquipment.Add("P", creativ.CreateFridgeFrizer());
-            NewEquipment.Add("a", creativ.CreateMusikCentr());
+            NewEquipment.Add("MC", creativ.CreateMusikCentr());
+            NewEquipment.Add("Fr1", creativ.CreateFridge());
+            NewEquipment.Add("t", creativ.CreateTV());
+
 
             while (true)
             {
-                
+
                 Console.Clear();
                 foreach (var newtemp in NewEquipment)
                 {
@@ -43,13 +42,30 @@ namespace SmartHouse
                     continue;
                 }
 
-                if (commands[0].ToLower() == "add" &&  !NewEquipment.ContainsKey(commands[1]))
+                if (commands[0].ToLower() == "add" && !NewEquipment.ContainsKey(commands[2]))
                 {
-                    NewEquipment.Add(commands[1], new NewEquipment(commands[1], creativ));
+                    switch (commands[1])
+                    {
+                        case "boiler":
+                            NewEquipment.Add(commands[2], creativ.CreateBoiler());
+                            break;
+                        case "cond":
+                            NewEquipment.Add(commands[2], creativ.CreateConditioner());
+                            break;
+                        case "mcentr":
+                            NewEquipment.Add(commands[2], creativ.CreateMusikCentr());
+                            break;
+                        case "fridge":
+                            NewEquipment.Add(commands[2], creativ.CreateFridge());
+                            break;
+                        case "tv":
+                            NewEquipment.Add(commands[2], creativ.CreateTV());
+                            break;
+                    }
                     continue;
                 }
 
-                if (commands[0].ToLower() == "add" && NewEquipment.ContainsKey(commands[1]))
+                if (commands[0].ToLower() == "add" && NewEquipment.ContainsKey(commands[2]))
                 {
                     Console.WriteLine("Устройство с таким именем уже существует");
                     Console.WriteLine("Нажмите любую клавишу для продолжения");
@@ -62,94 +78,118 @@ namespace SmartHouse
                     Menu.Help();
                     continue;
                 }
-
-                switch (commands[0].ToLower())
+                if (commands[0] == "del" && NewEquipment.ContainsKey(commands[2]))
                 {
-                    case "del":
-                        NewEquipment.Remove(commands[1]);
-                        break;
-                    case "add":
-                        NewEquipment.Remove(commands[1]);
-                        break;
-
-                    case "on":
-                        NewEquipment[commands[1]].On();
-                        break;
-
-
-                    case "off":
-                        NewEquipment[commands[1]].Off();
-                        break;
-
-                    case "cl":
-                        if (NewEquipment[commands[0]] is IOpenClose)
+                    switch (commands[1])
+                    {
+                        case "boiler":
+                            NewEquipment.Remove(commands[2]);
+                            break;
+                        case "cond":
+                            NewEquipment.Remove(commands[2]);
+                            break;
+                        case "mcentr":
+                            NewEquipment.Remove(commands[2]);
+                            break;
+                        case "fridge":
+                            NewEquipment.Remove(commands[2]);
+                            break;
+                        case "tv":
+                            NewEquipment.Remove(commands[2]);
+                            break;
+                    }
+                }
+                if (commands[0] == "on" && NewEquipment.ContainsKey(commands[2]))
+                {
+                    if(NewEquipment[commands[1]] is AbstractDevice)
                         {
-                            ((IOpenClose)NewEquipment[commands[1]]).Close();
+                            ((AbstractDevice)NewEquipment[commands[2]]).On();
                         }
-                        break;
-
-                    case "op":
-                        if (NewEquipment[commands[0]] is IOpenClose)
-                        {
-                            ((IOpenClose)NewEquipment[commands[0]]).Open();
-                        }
-                        break;
-                        
-                    case "decrT":
-                        if (NewEquipment[commands[1]] is IRegulatorTemp)
-                        {
-                            ((IRegulatorTemp)NewEquipment[commands[1]]).DecreaseTemp();
-                        }
-                        break;
-
-                    case "incrT":
-                        if (NewEquipment[commands[1]] is IRegulatorTemp)
-                        {
-                            ((IRegulatorTemp)NewEquipment[commands[1]]).IncreaseTemp();
-                        }
-                        break;             
-
-                    case "incV":
-                        if (NewEquipment[commands[1]] is IVolume)
-                        {
-                            ((IVolume)NewEquipment[commands[0]]).IncreaseVolume();
-                        }
-                        break;
-
-                    case "decrV":
-                        if (NewEquipment[commands[1]] is IVolume)
-                        {
-                            ((IVolume)NewEquipment[commands[0]]).DecreaseVolume();
-                        }
-                        break;
-
-                    case "PreviusChennel":
-                        if (NewEquipment[commands[0]] is IChangeChennel)
-                        {
-                            ((IChangeChennel)NewEquipment[commands[0]]).PreviusChennel();
-                        }
-                        break;
-
-                    case "NextChennel":
-                        if (NewEquipment[commands[0]] is IChangeChennel)
-                        {
-                            ((IChangeChennel)NewEquipment[commands[0]]).NextChennel();
-                        }
-                        break;
-
-                    case "Instruction":
-                        Menu.Instruction();
-                        break;
-
-                    default:
-                        Menu.Help();
-                        break;
                 }
 
+                    switch (commands[0])
+                    {
+                        case "on":
+                        if (NewEquipment[commands[1]] is AbstractDevice)
+                        {
+                            ((AbstractDevice)NewEquipment[commands[2]]).On();
+                        }
+                            break;
+                    
+                        case "off":
+                            NewEquipment[commands[1]].Off();
+                            break;
+
+                        case "close":
+                            if (NewEquipment[commands[1]] is IOpenClose)
+                            {
+                                ((IOpenClose)NewEquipment[commands[1]]).Close();
+                            }
+                            break;
+
+                        case "open":
+                            if (NewEquipment[commands[1]] is IOpenClose)
+                            {
+                                ((IOpenClose)NewEquipment[commands[1]]).Open();
+                            }
+                            break;
+
+                        case "decrT":
+                            if (NewEquipment[commands[1]] is IRegulatorTemp)
+                            {
+                                ((IRegulatorTemp)NewEquipment[commands[1]]).DecreaseTemp();
+                            }
+                            break;
+
+                        case "incrT":
+                            if (NewEquipment[commands[1]] is IRegulatorTemp)
+                            {
+                                ((IRegulatorTemp)NewEquipment[commands[1]]).IncreaseTemp();
+                            }
+                            break;
+
+                        case "incV":
+                            if (NewEquipment[commands[1]] is IVolume)
+                            {
+                                ((IVolume)NewEquipment[commands[0]]).IncreaseVolume();
+                            }
+                            break;
+
+                        case "decrV":
+                            if (NewEquipment[commands[1]] is IVolume)
+                            {
+                                ((IVolume)NewEquipment[commands[0]]).DecreaseVolume();
+                            }
+                            break;
+
+                        case "PreviusChennel":
+                            if (NewEquipment[commands[0]] is IChangeChennel)
+                            {
+                                ((IChangeChennel)NewEquipment[commands[0]]).PreviusChennel();
+                            }
+                            break;
+
+                        case "NextChennel":
+                            if (NewEquipment[commands[0]] is IChangeChennel)
+                            {
+                                ((IChangeChennel)NewEquipment[commands[0]]).NextChennel();
+                            }
+                            break;
+
+                        case "I":
+                            Menu.Instruction();
+                            break;
+
+                        default:
+                            Menu.Help();
+                            break;
+                    }
+
+                }
+
+
+
             }
-
-
-
         }
     }
 }
