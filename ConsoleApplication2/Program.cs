@@ -80,24 +80,7 @@ namespace SmartHouse
                 }
                 if (commands[0].ToLower() == "del" && NewEquipment.ContainsKey(commands[2]))
                 {
-                    switch (commands[1])
-                    {
-                        case "boiler":
-                            NewEquipment.Remove(commands[2]);
-                            break;
-                        case "cond":
-                            NewEquipment.Remove(commands[2]);
-                            break;
-                        case "mcentr":
-                            NewEquipment.Remove(commands[2]);
-                            break;
-                        case "fridge":
-                            NewEquipment.Remove(commands[2]);
-                            break;
-                        case "tv":
-                            NewEquipment.Remove(commands[2]);
-                            break;
-                    }
+                    NewEquipment.Remove(commands[2]);
                 }
 
                 if (commands[0] == "on" && NewEquipment.ContainsKey(commands[2]))
