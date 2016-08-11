@@ -78,7 +78,7 @@ namespace SmartHouse
                     Menu.Help();
                     continue;
                 }
-                if (commands[0] == "del" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0].ToLower() == "del" && NewEquipment.ContainsKey(commands[2]))
                 {
                     switch (commands[1])
                     {
@@ -105,20 +105,17 @@ namespace SmartHouse
                         {
                             ((AbstractDevice)NewEquipment[commands[2]]).On();
                         }
+                    break;
                 }
 
-                    switch (commands[0])
+                if (commands[0] == "off" && NewEquipment.ContainsKey(commands[2]))
+                {
+                    if (NewEquipment[commands[1]] is AbstractDevice)
                     {
-                        case "on":
-                        if (NewEquipment[commands[1]] is AbstractDevice)
-                        {
-                            ((AbstractDevice)NewEquipment[commands[2]]).On();
-                        }
-                            break;
-                    
-                        case "off":
-                            NewEquipment[commands[1]].Off();
-                            break;
+                        ((AbstractDevice)NewEquipment[commands[2]]).Off();
+                    }
+                    break;
+                }
 
                         case "close":
                             if (NewEquipment[commands[1]] is IOpenClose)
@@ -191,5 +188,3 @@ namespace SmartHouse
 
             }
         }
-    }
-}
