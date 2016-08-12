@@ -13,10 +13,11 @@ namespace SmartHouse
 
             IDictionary<string, AbstractDevice> NewEquipment = new Dictionary<string, AbstractDevice>();
             Creator creativ = new Creator();
-            NewEquipment.Add("MC", creativ.CreateMusikCentr());
-            NewEquipment.Add("Fr1", creativ.CreateFridge());
+            NewEquipment.Add("mc", creativ.CreateMusikCentr());
+            NewEquipment.Add("fr", creativ.CreateFridge());
             NewEquipment.Add("t", creativ.CreateTV());
             NewEquipment.Add("c", creativ.CreateConditioner());
+            NewEquipment.Add("b", creativ.CreateBoiler());
 
             while (true)
             {

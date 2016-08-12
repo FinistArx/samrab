@@ -29,17 +29,22 @@ namespace SmartHouse
                 }
             }
         }
-
-        public void DecreaseTemp()
+        public int DecreaseTemp()
         {
-            if ( temp > 10)            { temp--; }
-        
+            if (temp > min)
+            {
+                temp--;
+            }
+            return temp;
         }
 
-        public void IncreaseTemp()
+        public int IncreaseTemp()
         {
-            if (temp < 40)            { temp++; }
-
+            if (temp > min)
+            {
+                temp++;
+            }
+            return temp;
         }
 
 

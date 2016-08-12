@@ -30,20 +30,20 @@ namespace SmartHouse
         }
         public int DecreaseTemp()
         {
-            if (Temp > min )
+            if (temp > min )
             {
-                Temp--;
+                temp--;
             }
-            return Temp;
+            return temp;
         }
 
         public int IncreaseTemp()
         {
-            if (Temp > min)
+            if (temp > min)
             {
-                Temp++;
+                temp++;
             }
-            return Temp;
+            return temp;
         }
 
         public override string ToString()
