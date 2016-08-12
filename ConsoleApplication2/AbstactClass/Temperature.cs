@@ -55,14 +55,10 @@ namespace SmartHouse
 
         public void DecreaseTemp()
         {
-            for (; Temp > Min ; Temp--) 
-            { }
-
         }
 
         public  void  IncreaseTemp()
         {
-            for (; Temp < Max ; Temp++) { }
         }
     }
 }

@@ -71,7 +71,7 @@ namespace SmartHouse
 
         public void IncreaseVolume()
         {
-            for (; volume < 100; volume++)
+            if (volume < 100)
             {
                 volume++;
             }

@@ -16,7 +16,7 @@ namespace SmartHouse
             NewEquipment.Add("MC", creativ.CreateMusikCentr());
             NewEquipment.Add("Fr1", creativ.CreateFridge());
             NewEquipment.Add("t", creativ.CreateTV());
-
+            NewEquipment.Add("c", creativ.CreateConditioner());
 
             while (true)
             {
@@ -34,12 +34,6 @@ namespace SmartHouse
                 if (commands[0].ToLower() == "exit" & commands.Length == 1)
                 {
                     return;
-                }
-
-                if (commands.Length != 3)
-                {
-                    Menu.Help();
-                    continue;
                 }
 
                 if (commands[0].ToLower() == "add" && !NewEquipment.ContainsKey(commands[2]))
@@ -78,105 +72,78 @@ namespace SmartHouse
                     Menu.Help();
                     continue;
                 }
-                if (commands[0].ToLower() == "del" && NewEquipment.ContainsKey(commands[2]))
+
+                if (commands[0].ToLower() == "del" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    NewEquipment.Remove(commands[2]);
+                    NewEquipment.Remove(commands[1]);
+                    continue;
                 }
 
-                if (commands[0] == "on" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "on" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is AbstractDevice)
-                    {
-                        ((AbstractDevice)NewEquipment[commands[2]]).On();
-                    }
-                    break;
+                        NewEquipment[commands[1]].On();
+                        continue;
                 }
 
-                if (commands[0] == "off" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "off" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is AbstractDevice)
-                    {
-                        ((AbstractDevice)NewEquipment[commands[2]]).Off();
-                    }
-                    break;
+                        NewEquipment[commands[1]].Off();
+                        continue; 
                 }
 
-                if (commands[0] == "close" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "close" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IOpenClose)
-                    {
-                        ((IOpenClose)NewEquipment[commands[1]]).Close();
-                    }
-                    break;
+                    ((IOpenClose)NewEquipment[commands[1]]).Close();
+                    continue; 
                 }
 
-                if (commands[0] == "open" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "open" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IOpenClose)
-                    {
                         ((IOpenClose)NewEquipment[commands[1]]).Open();
-                    }
-                    break;
+                    continue; 
                 }
 
-                if (commands[0] == "decrT" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "deT" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IRegulatorTemp)
-                    {
                         ((IRegulatorTemp)NewEquipment[commands[1]]).DecreaseTemp();
-                    }
-                    break;
+                    continue;
                 }
 
-                if (commands[0] == "incrT" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "inT" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IRegulatorTemp)
-                    {
                         ((IRegulatorTemp)NewEquipment[commands[1]]).IncreaseTemp();
-                    }
-                    break;
+                    continue; 
                 }
 
-                if (commands[0] == "incV" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "inV" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IVolume)
-                    {
                         ((IVolume)NewEquipment[commands[1]]).IncreaseVolume();
-                    }
-                    break;
+                    continue; 
                 }
 
-                if (commands[0] == "decrV" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "deV" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IVolume)
-                    {
                         ((IVolume)NewEquipment[commands[1]]).DecreaseVolume();
-                    }
-                    break;
+                    continue; 
                 }
 
-                if (commands[0] == "prChen" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "prCh" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IChangeChennel)
-                    {
+
                         ((IChangeChennel)NewEquipment[commands[1]]).PreviusChennel();
-                    }
-                    break;
+                    continue; 
                 }
 
-                if (commands[0] == "nextChen" && NewEquipment.ContainsKey(commands[2]))
+                if (commands[0] == "nextCh" && NewEquipment.ContainsKey(commands[1]))
                 {
-                    if (NewEquipment[commands[1]] is IChangeChennel)
-                    {
                         ((IChangeChennel)NewEquipment[commands[1]]).NextChennel();
-                    }
-                    break;
+                    continue; 
                 }
 
                 if (commands[0].ToLower() == "In" & commands.Length == 1)
                 {
                     Menu.Instruction();
-                    break; ;
+                    continue; 
                 }
 
             }

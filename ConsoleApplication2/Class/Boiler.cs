@@ -14,17 +14,36 @@ namespace SmartHouse
             this.min = min;
             this.max = max;
         }
-
-        public void DecreaseTemp()
+        public int Temp
         {
-            for (; temp > min; temp--)
-            { }
-
+            get
+            {
+                return temp;
+            }
+            set
+            {
+                if (value < max && value > min)
+                {
+                    temp = value;
+                }
+            }
+        }
+        public int DecreaseTemp()
+        {
+            if (Temp > min )
+            {
+                Temp--;
+            }
+            return Temp;
         }
 
-        public void IncreaseTemp()
+        public int IncreaseTemp()
         {
-            for (; temp < max; temp++) { }
+            if (Temp > min)
+            {
+                Temp++;
+            }
+            return Temp;
         }
 
         public override string ToString()
@@ -41,7 +60,7 @@ namespace SmartHouse
             }
 
 
-            return "состояние: " + state + ", температура: " + temp;
+            return "состояние: " + state + ", температура:"+ " " + Temp;
             }
         }
     }

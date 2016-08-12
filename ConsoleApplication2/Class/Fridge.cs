@@ -16,14 +16,37 @@ namespace SmartHouse
             this.min = min;
             this.max = max;
         }
+
+        public int Temp
+        {
+            get
+            {
+                return temp;
+            }
+            set
+            {
+                if (value <= max && value >= min)
+                {
+                    temp = value;
+                }
+            }
+        }
+
         public void DecreaseTemp()
         {
-            for (; temp > min; temp--)   { }
+            if (temp > min)
+            {
+                temp--;
+            }
+
         }
 
         public void IncreaseTemp()
         {
-            for (; temp < max; temp++) { }
+            if (temp > min)
+            {
+                temp++;
+            }
         }
 
           public bool stateopenclose;
