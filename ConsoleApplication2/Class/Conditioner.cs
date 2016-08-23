@@ -7,15 +7,18 @@ namespace SmartHouse
 {
     public class Conditioner : Temperature
     {
-
-        public Conditioner(string name, int min, int max, int temp)
-            : base(name, min, max, temp)
+        private int max;
+        private int min;
+        private int temp;
+        internal Conditioner(int max, int min, int temp)
+            : base(max, min, temp)
         {
             this.temp = temp;
-            this.min = min;
             this.max = max;
+            this.min = min;
         }
-        public int Temp
+
+        public  int Temp
         {
             get
             {  
@@ -31,22 +34,13 @@ namespace SmartHouse
         }
         public int DecreaseTemp()
         {
-            if (temp > min)
-            {
-                temp--;
-            }
-            return temp;
+            return Temp--;
         }
 
         public int IncreaseTemp()
         {
-            if (temp > min)
-            {
-                temp++;
-            }
-            return temp;
+            return Temp++;
         }
-
 
         public override string ToString()
         {
@@ -61,8 +55,8 @@ namespace SmartHouse
                 state = "выключен";
             }
 
-
             return "состояние: " + state + ", температура: " + Temp;
         }
     }
-    }
+    
+}

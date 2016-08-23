@@ -9,32 +9,32 @@ namespace SmartHouse
     {
         public TV CreateTV()
         {
-            TV Tv = new TV("T", 117, 50);
+            TV Tv = new TV(117, 50);
             return Tv;
         }
 
         public MusikCentr CreateMusikCentr() 
         {
-          MusikCentr Mc= new MusikCentr( "M1", 138, 50 );
+          MusikCentr Mc = new MusikCentr( 138, 50 );
           return Mc;
         }
 
         public Fridge CreateFridge()
         {
 
-            Fridge FrFr = new Fridge("X", -20, 5, 0);
-            return FrFr;      
+            Fridge Fr = new Fridge(10, -20, 0);
+            return Fr;      
         }
 
          public Boiler CreateBoiler()
         {
-            Boiler Boil= new Boiler("B", 10, 90, 16);
+            Boiler Boil= new Boiler(90, 10, 15);
             return Boil;
          }
 
            public Conditioner CreateConditioner() 
            {
-               Conditioner Cond = new Conditioner("C", 10, 40, 14);
+               Conditioner Cond = new Conditioner(40, 10, 16);
                return Cond;
         }
     }

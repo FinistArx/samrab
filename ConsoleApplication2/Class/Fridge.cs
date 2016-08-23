@@ -7,14 +7,16 @@ namespace SmartHouse
 {
     public class Fridge : SmartHouse.Temperature, IOpenClose
     {
+        private int max = 10;
+        private int min = -20;
+        private int temp;
 
-
-        public Fridge(string name, int min, int max, int temp)
-            : base(name, min, max, temp)
+        internal Fridge(int max, int min, int temp)
+            : base( max,  min, temp)
         {
-            this.temp = temp;
-            this.min = min;
-            this.max = max;
+          temp = 0;
+            max = 10;
+            min = -20;
         }
 
         public int Temp
@@ -32,24 +34,19 @@ namespace SmartHouse
             }
         }
 
+
         public void DecreaseTemp()
         {
-            if (temp > min)
-            {
-                temp--;
-            }
-
+            Temp--;
         }
 
         public void IncreaseTemp()
         {
-            if (temp > min)
-            {
-                temp++;
-            }
+            Temp++;
         }
 
-          public bool stateopenclose;
+
+        public bool stateopenclose;
         public bool StateOpenClose
         {
             get

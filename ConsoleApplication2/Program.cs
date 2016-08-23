@@ -41,7 +41,7 @@ namespace SmartHouse
                 {
                     switch (commands[1])
                     {
-                        case "boiler":
+                        case "boil":
                             NewEquipment.Add(commands[2], creativ.CreateBoiler());
                             break;
                         case "cond":
@@ -104,13 +104,13 @@ namespace SmartHouse
                     continue; 
                 }
 
-                if (commands[0] == "deT" && NewEquipment.ContainsKey(commands[1]))
+                if (commands[0] == "det" && NewEquipment.ContainsKey(commands[1]))
                 {
                         ((IRegulatorTemp)NewEquipment[commands[1]]).DecreaseTemp();
                     continue;
                 }
 
-                if (commands[0] == "inT" && NewEquipment.ContainsKey(commands[1]))
+                if (commands[0] == "int" && NewEquipment.ContainsKey(commands[1]))
                 {
                         ((IRegulatorTemp)NewEquipment[commands[1]]).IncreaseTemp();
                     continue; 

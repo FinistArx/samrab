@@ -7,7 +7,7 @@ namespace SmartHouse
 {
     public class MusikCentr : AbstractDevice, IChangeChennel, IVolume
     {
-        public MusikCentr(string name, int chennel, int volume)
+        public MusikCentr( int chennel, int volume)
         {
 
             this.volume = volume;
@@ -15,7 +15,7 @@ namespace SmartHouse
 
         }
 
-        public int chennel;
+        private int chennel;
         public int Chennel
         {
             get
@@ -28,7 +28,7 @@ namespace SmartHouse
             }
         }
 
-        public int volume;
+        private int volume;
         public int Volume
         {
             get
@@ -47,7 +47,7 @@ namespace SmartHouse
 
             if (chennel < 200)
             {
-                chennel++;
+                Chennel++;
             }
         }
 
@@ -55,7 +55,7 @@ namespace SmartHouse
         {
             if (chennel > 0)
             {
-                chennel--;
+                Chennel--;
             }
         }
 
@@ -63,15 +63,15 @@ namespace SmartHouse
         {
             if (volume > 0)
             {
-                volume--;
+                Volume--;
             }
         }
 
         public void IncreaseVolume()
         {
-            for (; volume < 100; volume++)
+            if (volume <100)
             {
-                volume++;
+                Volume++;
             }
         }
 

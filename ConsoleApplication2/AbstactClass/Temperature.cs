@@ -7,59 +7,22 @@ namespace SmartHouse
 {
     public abstract class Temperature : AbstractDevice, SmartHouse.IRegulatorTemp
     {
-        public string name;
-        protected  int max;
-        protected  int min;
-        public int temp; 
+        private  int max;
+        private int min;
+        private int temp;
+
+        internal Temperature(int max, int min, int temp) 
+        {
+        }
         
-        public Temperature (string name, int min, int max, int temp)
-        {
-            this.temp = temp;
-            this.min = min;
-            this.max = max;
-        }
-
-        public int Temp
-        {
-            get
-            {
-                return temp;
-            }
-            set
-            {
-                if (value <= max && value >= min)
-                {
-                    temp = value;
-                }
-            }
-        }
- 
-        public  int Max
-        {
-            get
-            {
-                return max;
-            }
-
-        }
-
-        public  int Min
-        {
-            get
-            {
-                return min;
-            }
-
-        }
-
-
+        public  int Temp
+        { get; set; }
+           
         public void DecreaseTemp()
-        {
-        }
+        {        }
 
         public  void  IncreaseTemp()
-        {
-        }
+        {        }
     }
 }
     

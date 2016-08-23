@@ -7,7 +7,7 @@ namespace SmartHouse
 {
     public class TV : AbstractDevice, IChangeChennel, IVolume
     {
-        public TV(string name, int chennel, int volume)
+        public TV(int chennel, int volume)
         {
 
             this.volume = volume;
@@ -15,7 +15,7 @@ namespace SmartHouse
 
         }
 
-        public int chennel;
+        private int chennel;
         public int Chennel
         {
             get
@@ -29,7 +29,7 @@ namespace SmartHouse
 
         }
 
-        public int volume;
+        private int volume;
         public int Volume
         {
             get
@@ -41,8 +41,6 @@ namespace SmartHouse
                 volume = value;
             }
         }
-
-
 
         public void NextChennel()
         {
