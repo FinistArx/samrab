@@ -17,39 +17,6 @@ namespace SmartHouse
             this.max = max;
             this.min = min;
         }
-        public  int Temp
-        {
-            get
-            {
-                return temp;
-            }
-            set
-            {
-                if (value < max && value > min)
-                {
-                    temp = value;
-                }
-            }
-        }
-
-        internal void DecreaseTemp()
-        {
-            if (temp > min)
-            {
-                temp--;
-                Console.WriteLine("dddd");
-            }
-
-        }
-
-        internal void IncreaseTemp()
-        {
-            if (temp < max)
-            {
-                temp++;
-                Console.WriteLine("dd");
-            }
-        }
 
         public override string ToString()
         {

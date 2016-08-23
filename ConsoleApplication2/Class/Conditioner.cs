@@ -18,30 +18,6 @@ namespace SmartHouse
             this.min = min;
         }
 
-        public  int Temp
-        {
-            get
-            {  
-                return temp;     
-            }
-            set
-            {
-                if (value < max && value > min)
-                {
-                    temp = value;
-                }
-            }
-        }
-        public int DecreaseTemp()
-        {
-            return Temp--;
-        }
-
-        public int IncreaseTemp()
-        {
-            return Temp++;
-        }
-
         public override string ToString()
         {
             string state;

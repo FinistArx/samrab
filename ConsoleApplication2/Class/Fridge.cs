@@ -14,37 +14,10 @@ namespace SmartHouse
         internal Fridge(int max, int min, int temp)
             : base( max,  min, temp)
         {
-          temp = 0;
-            max = 10;
-            min = -20;
+            this.temp = temp;
+            this.max = max;
+            this.min = min;
         }
-
-        public int Temp
-        {
-            get
-            {
-                return temp;
-            }
-            set
-            {
-                if (value <= max && value >= min)
-                {
-                    temp = value;
-                }
-            }
-        }
-
-
-        public void DecreaseTemp()
-        {
-            Temp--;
-        }
-
-        public void IncreaseTemp()
-        {
-            Temp++;
-        }
-
 
         public bool stateopenclose;
         public bool StateOpenClose
